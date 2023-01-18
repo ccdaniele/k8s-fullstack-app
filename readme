@@ -1,0 +1,6 @@
+kubectl apply -f vin-deployment.yaml
+
+kubectl port-forward vinology-55d4c58544-bq9fn 3000:3000
+
+kubectl port-forward vinology-55d4c58544-bq9fn 3001:3001
+

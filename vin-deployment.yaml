@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vinology
+spec:
+  selector:
+    matchLabels:
+      app: vinology
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: vinology 
+    spec:
+      containers:
+      ## container api      
+      - name: vinology-server
+        image: ccdaniele/vinology-server
+        ports:
+        - containerPort: 3300       
+      ## container WordPress    
+      - name: vinology-client
+        image: ccdaniele/vinology-client
+        ports:
+        - containerPort: 3301
+
